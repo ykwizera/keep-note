@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --primary-color: #10439F;
+  --secondary-color: #874CCC;
+  --sub-primary: #C65BCF;
+  --sub-secondary: #F27BBD;
+  --background-color: #f5f5f5; /* Light gray background similar to Google Keep */
+  --search-background: #e0e0e0; /* Light gray for the search bar */
+  --search-icon-color: #9e9e9e; /* Gray color for search icons */
+  --sidebar-width: 260px; /* Fixed width for the sidebar */
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--background-color);
+  position: fixed; /* Fix the header to the top */
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure the header is above other content */
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.list-icon {
+  height: 24px; /* Adjust the icon size */
+  margin-right: 8px; /* Space between list icon and logo */
+}
+
+.app-logo {
+  height: 40px; /* Adjust logo size */
+  margin-right: 8px; /* Space between logo image and text */
+}
+
+.logo h1 {
+  font-size: 1.6em;
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.search-bar {
+  position: absolute; /* Absolute positioning within the header */
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  display: flex;
+  align-items: center;
+  background-color: var(--search-background);
+  border-radius: 20px; /* Rounded corners for the search bar */
+  padding: 5px 15px;
+  width: 500px; /* Fixed width for the search bar */
+  max-width: 100%; /* Ensure it doesn't overflow */
+}
+
+.search-icon, .close-icon {
+  font-size: 20px;
+  color: var(--search-icon-color);
+  margin-right: 10px;
+}
+
+.search-input {
+  flex-grow: 1;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  outline: none;
+  color: #333;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-buttons img {
+  height: 24px; /* Adjust button icon size */
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+/* Space between the groups of icons */
+.nav-buttons img:nth-child(-n+3) {
+  margin-right: 20px; /* Adjust spacing between first group and the next group */
+}
+
+.nav-buttons img:hover {
+  opacity: 0.7;
+}
+
+.profile-pic {
+  height: 40px; /* Adjust profile picture size */
+  border-radius: 50%; /* Make it round */
+  margin-left: 10px; /* Space between profile pic and other icons */
+}
+
+.sidebar {
+  /* background-color: #ffffff; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  position: fixed;
+  width: var(--sidebar-width); /* Use the fixed width from root */
+  height: 100%;
+  z-index: 10;
+  padding: 24px;
+  top: 60px; /* Space below the fixed header */
+  left: 0;
+  overflow-y: auto; /* Ensure scrolling within sidebar if needed */
+}
+
+/* Vertical tabs */
+.vertical-tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.vertical-tabs a {
+  display: flex;
+  align-items: center;
+  padding: 0.75em 1em;
+  background-color: transparent;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 450;
+  color: var(--c-text-action);
+  transition: 0.15s ease;
+}
+
+.vertical-tabs a:hover,
+.vertical-tabs a:focus,
+.vertical-tabs a.active {
+  background-color: #fdf0c3;
+}
+
+.vertical-tabs img {
+  height: 24px;
+  margin-right: 8px;
+}
+
+.vertical-tabs b {
+  font-weight: 700;
+}
+
+.info {
+  display: flex;
+  margin-top: 60px; /* Space for fixed header */
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px; /* Padding inside the content area */
+  margin-left: 350px; /* Space for the sidebar */
+}
+
+.card_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+  }
+
+  .card {
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 250px;
+    height: var(--c-text-action);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    display: flex;
+    padding-left: 15%;
+  }
+
+  .card:hover {
+    transform: translateY(-15px);
+  }
