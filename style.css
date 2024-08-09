@@ -81,7 +81,7 @@ header {
   padding: 5px 15px;
   width: 500px;
   max-width: 100%;
-  margin: 0 auto; /* Center the search bar */
+  margin: 0 auto;
 }
 
 .search-icon, .close-icon {
@@ -209,27 +209,35 @@ header {
   }
 
   .search-bar {
-    width: 100px;
+    width: 20px;
   }
 
   .sidebar {
-    position: absolute;
-    top: 60px;
-    left: -260px;
-    transition: left 0.3s ease;
-    z-index: 1000;
+    width: 60px; 
+    padding: 10px; 
+    padding-top: 40px;
   }
 
-  #menu-toggle:checked ~ .sidebar {
-    left: 0;
+  .sidebar b {
+    display: none;
   }
 
-  #menu-toggle:checked ~ .content {
-    margin-left: var(--sidebar-width);
+  .vertical-tabs a {
+    justify-content: center;
+    padding: 10px 0; 
+  }
+
+  .vertical-tabs img {
+    margin-right: 0;
   }
 
   .content {
-    margin-left: 0;
+    padding-top: 40px;
+    margin-left: 80px; 
+  }
+
+  .card_container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
   }
 
   .header-content {
@@ -239,13 +247,11 @@ header {
 
 @media (min-width: 769px) {
   .sidebar {
-    position: relative;
-    left: 0;
-    height: auto;
-    box-shadow: none;
+    width: var(--sidebar-width); 
+    padding: 24px; 
   }
 
   .content {
-    margin-left: var(--sidebar-width);
+    margin-left: var(--sidebar-width); 
   }
 }
