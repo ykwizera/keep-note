@@ -84,6 +84,9 @@ header {
   margin: 0 auto;
 }
 
+.search-icon1 {
+  display: none;
+}
 .search-icon, .close-icon {
   font-size: 20px;
   color: var(--search-icon-color);
@@ -209,7 +212,12 @@ header {
   }
 
   .search-bar {
-    width: 20px;
+    display: none;
+  }
+
+  .search-icon1 {
+    display: flex;
+    padding-right: 180px;
   }
 
   .sidebar {
